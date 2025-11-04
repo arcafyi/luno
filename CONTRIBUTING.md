@@ -144,24 +144,19 @@ Before you begin, make sure you have the following installed:
      - Password: `postgres`
      - Database: `luno`
 5. **Set up environment variables**:
-   - Copy `.env.example` to `.env.local` (if it exists)
-   - Follow the setup instructions in [README.md](README.md)
-   - Make sure you have:
-     - Database connection URL (for the Docker database, e.g., `DATABASE_URL=postgresql://postgres:postgres@localhost:5432/luno`)
-     - Encryption key (generate with `openssl rand -hex 32`)
-     - Other required environment variables
+   - Copy `.env.example` to `.env.local`
 6. **Set up the database**:
    - Start the database using Docker:
      ```bash
      docker-compose up -d
      ```
-   - Run database migrations with drizzle-kit:
-     ```bash
-     bunx drizzle-kit push
-     ```
    - Generate TypeScript types (if needed):
      ```bash
      bunx drizzle-kit generate
+     ```
+   - Run database migrations with drizzle-kit:
+     ```bash
+     bunx drizzle-kit push
      ```
 7. **Start the development server**:
    ```bash
