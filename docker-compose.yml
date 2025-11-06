@@ -1,24 +1,19 @@
-version: '3.8'
-
-services:
-  postgres:
-    image: postgres:16-alpine
-    container_name: luno-db
-    restart: unless-stopped
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: luno
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+version: "3"
 
 volumes:
-  postgres_data:
+  database:
     driver: local
+
+services:
+  mysql:
+    platform: linux/amd64
+    image: mysql:8.0.32
+    container_name: turborepo_mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: turborepo
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - database:/var/lib/mysql
