@@ -5,6 +5,7 @@ module.exports = {
   parserOptions: {
     project: true,
   },
+  ignorePatterns: ["generated/**"],
   rules: {
     "turbo/no-undeclared-env-vars": [
       "error",
