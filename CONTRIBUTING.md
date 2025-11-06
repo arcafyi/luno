@@ -130,7 +130,7 @@ Before you begin, make sure you have the following installed:
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/your-username/arca-beta.git
+   git clone https://github.com/your-username/luno.git
    cd arca-beta
    ```
 3. **Install dependencies**:

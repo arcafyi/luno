@@ -23,13 +23,13 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/arcafyi/arca-beta.git
-   cd arca-beta
+   git clone https://github.com/arcafyi/luno.git
+   cd arca
    ```
 
 2. **Install dependencies**
    ```bash
-   bun install
+   yarn install
    ```
 
 3. **Set up environment variables**
@@ -45,12 +45,12 @@
 
 5. **Run database migrations**
    ```bash
-   bunx drizzle-kit push
+   npx drizzle-kit push
    ```
 
 6. **Start the development server**
    ```bash
-   bun dev
+   yarn dev
    ```
 
 Visit [http://localhost:3000](http://localhost:3000) to see the application.
