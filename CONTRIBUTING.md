@@ -1,10 +1,11 @@
 # Contributing to Luno
 
-First off, thanks for taking the time to contribute! 
+First off, thanks for taking the time to contribute!
 
-All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions. 
+All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions.
 
 > And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
+>
 > - Star the project
 > - Tweet about it
 > - Refer this project in your project's readme
@@ -45,7 +46,8 @@ We will then take care of the issue as soon as possible.
 
 ## I Want To Contribute
 
-> ### Legal Notice 
+> ### Legal Notice
+>
 > When contributing to this project, you must agree that you have authored 100% of the content (Use of AI is allowed, but you must detail the usage of AI in the contribution), and make sure that the content you contribute may be provided under the project license.
 
 ### Reporting Bugs
@@ -74,7 +76,7 @@ We use GitHub issues to track bugs and errors. If you run into an issue with the
 
 - Open an [Issue](/issues/new). (Since we can't be sure at this point whether it is a bug or not, we ask you not to talk about a bug yet and not to label the issue.)
 - Explain the behavior you would expect and the actual behavior.
-- Please provide as much context as possible and describe the *reproduction steps* that someone else can follow to recreate the issue on their own. This usually includes your code. For good bug reports you should isolate the problem and create a reduced test case.
+- Please provide as much context as possible and describe the _reproduction steps_ that someone else can follow to recreate the issue on their own. This usually includes your code. For good bug reports you should isolate the problem and create a reduced test case.
 - Provide the information you collected in the previous section.
 
 Once it's filed:
@@ -101,7 +103,7 @@ Enhancement suggestions are tracked as [GitHub issues](/issues).
 - Use a **clear and descriptive title** for the issue to identify the suggestion.
 - Provide a **step-by-step description of the suggested enhancement** in as many details as possible.
 - **Describe the current behavior** and **explain which behavior you expected to see instead** and why. At this point you can also tell which alternatives do not work for you.
-- You may want to **include screenshots and animated GIFs** which help you demonstrate the steps or point out the part which the suggestion is related to. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/colinkeenan/silentcast) or [this tool](https://github.com/GNOME/byzanz) on Linux. 
+- You may want to **include screenshots and animated GIFs** which help you demonstrate the steps or point out the part which the suggestion is related to. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/colinkeenan/silentcast) or [this tool](https://github.com/GNOME/byzanz) on Linux.
 - **Explain why this enhancement would be useful** to most Luno users. You may also want to point out the other projects that solved it better and which could serve as inspiration.
 
 ### Your First Code Contribution
@@ -113,16 +115,20 @@ Before you begin, make sure you have the following installed:
 - **Git** - For version control ([Download](https://git-scm.com/downloads))
 - **Bun** - For running the project ([Installation guide](https://bun.sh/docs/installation))
 - **Docker** - For running the database locally
+
   - **Windows/Mac**: Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
   - **Linux**: Install Docker Engine and Docker Compose:
+
     ```bash
     # Ubuntu/Debian
     sudo apt-get update
     sudo apt-get install docker.io docker-compose
-    
+
     # Or follow official Docker installation guide
     ```
+
   - Make sure Docker is running before proceeding
+
 - **Code Editor** - We recommend [VS Code](https://code.visualstudio.com/) or your preferred editor
 
 #### Setting Up Your Development Environment
@@ -132,9 +138,12 @@ Before you begin, make sure you have the following installed:
    ```bash
    git clone https://github.com/your-username/luno.git
    cd luno
+   git clone https://github.com/your-username/luno.git
+   cd luno
    ```
 3. **Install dependencies**:
    ```bash
+   yarn install
    yarn install
    ```
 4. **Set up Docker**:
@@ -145,21 +154,27 @@ Before you begin, make sure you have the following installed:
      - Database: `luno`
 5. **Set up environment variables**:
    - Copy `.env.example` to `.env.local`
+   - Copy `.env.example` to `.env.local`
 6. **Set up the database**:
    - Start the database using Docker:
      ```bash
      docker-compose up -d
      ```
    - Generate TypeScript types (if needed):
+   - Generate TypeScript types (if needed):
      ```bash
+     npx drizzle-kit generate
      npx drizzle-kit generate
      ```
    - Run database migrations with drizzle-kit:
+   - Run database migrations with drizzle-kit:
      ```bash
+     npx drizzle-kit push
      npx drizzle-kit push
      ```
 7. **Start the development server**:
    ```bash
+   yarn dev
    yarn dev
    ```
 
@@ -177,10 +192,16 @@ Before you begin, make sure you have the following installed:
 5. **Test your changes** thoroughly
 6. **Commit your changes** following our [commit message guidelines](#commit-messages)
 7. **Push to your fork**:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-8. **Create a Pull Request** on GitHub
+8. **Format your code** by running `yarn format`
+9. **Check code quality** by running `yarn lint`
+10. **Test your changes** thoroughly
+11. **Commit your changes** following our [commit message guidelines](#commit-messages)
+12. **Push to your fork**:
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+13. **Create a Pull Request** on GitHub
+14. **Create a Pull Request** on GitHub
 
 #### Pull Request Process
 
@@ -188,6 +209,7 @@ Before you begin, make sure you have the following installed:
 - Include the relevant issue number if applicable
 - Make sure all tests pass and your code follows the styleguide
 - Run `yarn format` to format your code before committing
+- Run `yarn format:check` to verify formatting (this is also run in CI)
 - Run `yarn lint` to ensure there are no linting errors
 - Request review from maintainers
 - Address any feedback and update your PR accordingly
@@ -214,10 +236,11 @@ If you want to improve documentation, please:
 
 - **TypeScript**: Follow TypeScript best practices and use strict mode
 - **React/Next.js**: Follow React best practices and Next.js conventions
-- **Formatting**: Run `yarn format` to automatically format code using Prettier. The formatter handles TypeScript, TSX, and Markdown files
+- **Formatting**: Run `yarn format` to automatically format code using Prettier. The formatter handles TypeScript, TSX, and Markdown files. Use `yarn format:check` to verify formatting without making changes
 - **Components**: Use functional components with hooks
 - **File naming**: Use kebab-case for files and PascalCase for components
 - **Imports**: Group imports (external, internal, relative) with blank lines
+- **Linting**: Run `yarn lint` before committing. Generated files (e.g., Prisma generated files in `packages/database/generated/`) are automatically excluded from linting
 - **Linting**: Run `yarn lint` before committing. Generated files (e.g., Prisma generated files in `packages/database/generated/`) are automatically excluded from linting
 
 ### TypeScript Guidelines

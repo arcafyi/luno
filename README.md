@@ -66,12 +66,14 @@ Visit [http://localhost:3000](http://localhost:3000) to see the application.
 
 - `yarn dev` - Start the development server
 - `yarn format` - Format code using Prettier (formats TypeScript, TSX, and Markdown files)
+- `yarn format:check` - Check if code is properly formatted without making changes
 - `yarn lint` - Run ESLint to check code quality
 - `yarn build` - Build the project for production
 
 ### Code Quality
 
 - Run `yarn format` to automatically format your code before committing
+- Run `yarn format:check` to verify formatting without making changes (useful for CI)
 - Run `yarn lint` to check for code quality issues before committing
 - Generated files (e.g., Prisma generated files in `packages/database/generated/`) are automatically excluded from linting
 - Follow the project's styleguide as outlined in [CONTRIBUTING.md](CONTRIBUTING.md)
