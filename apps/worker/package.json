@@ -1,0 +1,22 @@
+{
+  "name": "worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@luno/eslint-config": "*",
+    "@luno/typescript-config": "*",
+    "@luno/database": "*",
+    "@types/node": "^20",
+    "eslint": "^9"
+  }
+}

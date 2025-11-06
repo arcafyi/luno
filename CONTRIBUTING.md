@@ -131,11 +131,11 @@ Before you begin, make sure you have the following installed:
 2. **Clone your fork** locally:
    ```bash
    git clone https://github.com/your-username/luno.git
-   cd arca-beta
+   cd luno
    ```
 3. **Install dependencies**:
    ```bash
-   bun install
+   yarn install
    ```
 4. **Set up Docker**:
    - The project includes a `docker-compose.yml` file with PostgreSQL configured
@@ -152,15 +152,15 @@ Before you begin, make sure you have the following installed:
      ```
    - Generate TypeScript types (if needed):
      ```bash
-     bunx drizzle-kit generate
+     npx drizzle-kit generate
      ```
    - Run database migrations with drizzle-kit:
      ```bash
-     bunx drizzle-kit push
+     npx drizzle-kit push
      ```
 7. **Start the development server**:
    ```bash
-   bun dev
+   yarn dev
    ```
 
 #### Making Changes
