@@ -192,16 +192,10 @@ Before you begin, make sure you have the following installed:
 5. **Test your changes** thoroughly
 6. **Commit your changes** following our [commit message guidelines](#commit-messages)
 7. **Push to your fork**:
-8. **Format your code** by running `yarn format`
-9. **Check code quality** by running `yarn lint`
-10. **Test your changes** thoroughly
-11. **Commit your changes** following our [commit message guidelines](#commit-messages)
-12. **Push to your fork**:
-    ```bash
-    git push origin feature/your-feature-name
-    ```
-13. **Create a Pull Request** on GitHub
-14. **Create a Pull Request** on GitHub
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+8. **Create a Pull Request** on GitHub
 
 #### Pull Request Process
 
@@ -236,12 +230,11 @@ If you want to improve documentation, please:
 
 - **TypeScript**: Follow TypeScript best practices and use strict mode
 - **React/Next.js**: Follow React best practices and Next.js conventions
-- **Formatting**: Run `yarn format` to automatically format code using Prettier. The formatter handles TypeScript, TSX, and Markdown files. Use `yarn format:check` to verify formatting without making changes
+- **Formatting**: Run `yarn format` to automatically format code using Prettier. The formatter handles TypeScript, TSX, and Markdown files. Use `yarn format:check` to verify formatting without making changes. Generated files (e.g., Prisma generated files) are automatically excluded from formatting
 - **Components**: Use functional components with hooks
 - **File naming**: Use kebab-case for files and PascalCase for components
 - **Imports**: Group imports (external, internal, relative) with blank lines
-- **Linting**: Run `yarn lint` before committing. Generated files (e.g., Prisma generated files in `packages/database/generated/`) are automatically excluded from linting
-- **Linting**: Run `yarn lint` before committing. Generated files (e.g., Prisma generated files in `packages/database/generated/`) are automatically excluded from linting
+- **Linting**: Run `yarn lint` before committing. Generated files (e.g., Prisma generated files in `packages/database/generated/`) are automatically excluded from both formatting and linting
 
 ### TypeScript Guidelines
 
