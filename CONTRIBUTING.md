@@ -138,9 +138,12 @@ Before you begin, make sure you have the following installed:
    ```bash
    git clone https://github.com/your-username/luno.git
    cd luno
+   git clone https://github.com/your-username/luno.git
+   cd luno
    ```
 3. **Install dependencies**:
    ```bash
+   yarn install
    yarn install
    ```
 4. **Set up Docker**:
@@ -151,21 +154,27 @@ Before you begin, make sure you have the following installed:
      - Database: `luno`
 5. **Set up environment variables**:
    - Copy `.env.example` to `.env.local`
+   - Copy `.env.example` to `.env.local`
 6. **Set up the database**:
    - Start the database using Docker:
      ```bash
      docker-compose up -d
      ```
    - Generate TypeScript types (if needed):
+   - Generate TypeScript types (if needed):
      ```bash
+     npx drizzle-kit generate
      npx drizzle-kit generate
      ```
    - Run database migrations with drizzle-kit:
+   - Run database migrations with drizzle-kit:
      ```bash
+     npx drizzle-kit push
      npx drizzle-kit push
      ```
 7. **Start the development server**:
    ```bash
+   yarn dev
    yarn dev
    ```
 
@@ -183,10 +192,16 @@ Before you begin, make sure you have the following installed:
 5. **Test your changes** thoroughly
 6. **Commit your changes** following our [commit message guidelines](#commit-messages)
 7. **Push to your fork**:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-8. **Create a Pull Request** on GitHub
+8. **Format your code** by running `yarn format`
+9. **Check code quality** by running `yarn lint`
+10. **Test your changes** thoroughly
+11. **Commit your changes** following our [commit message guidelines](#commit-messages)
+12. **Push to your fork**:
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+13. **Create a Pull Request** on GitHub
+14. **Create a Pull Request** on GitHub
 
 #### Pull Request Process
 
@@ -225,6 +240,7 @@ If you want to improve documentation, please:
 - **Components**: Use functional components with hooks
 - **File naming**: Use kebab-case for files and PascalCase for components
 - **Imports**: Group imports (external, internal, relative) with blank lines
+- **Linting**: Run `yarn lint` before committing. Generated files (e.g., Prisma generated files in `packages/database/generated/`) are automatically excluded from linting
 - **Linting**: Run `yarn lint` before committing. Generated files (e.g., Prisma generated files in `packages/database/generated/`) are automatically excluded from linting
 
 ### TypeScript Guidelines
