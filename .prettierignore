@@ -1,0 +1,14 @@
+# Generated files
+packages/database/generated/**
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Logs
+*.log

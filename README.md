@@ -75,7 +75,7 @@ Visit [http://localhost:3000](http://localhost:3000) to see the application.
 - Run `yarn format` to automatically format your code before committing
 - Run `yarn format:check` to verify formatting without making changes (useful for CI)
 - Run `yarn lint` to check for code quality issues before committing
-- Generated files (e.g., Prisma generated files in `packages/database/generated/`) are automatically excluded from linting
+- Generated files (e.g., Prisma generated files in `packages/database/generated/`) are automatically excluded from both formatting and linting
 - Follow the project's styleguide as outlined in [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Contributing
