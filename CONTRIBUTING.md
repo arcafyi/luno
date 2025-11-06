@@ -172,19 +172,23 @@ Before you begin, make sure you have the following installed:
    git checkout -b fix/your-bug-fix-name
    ```
 2. **Make your changes** following our [styleguide](#styleguides)
-3. **Test your changes** thoroughly
-4. **Commit your changes** following our [commit message guidelines](#commit-messages)
-5. **Push to your fork**:
+3. **Format your code** by running `yarn format`
+4. **Check code quality** by running `yarn lint`
+5. **Test your changes** thoroughly
+6. **Commit your changes** following our [commit message guidelines](#commit-messages)
+7. **Push to your fork**:
    ```bash
    git push origin feature/your-feature-name
    ```
-6. **Create a Pull Request** on GitHub
+8. **Create a Pull Request** on GitHub
 
 #### Pull Request Process
 
 - Ensure your PR description clearly describes the problem and solution
 - Include the relevant issue number if applicable
 - Make sure all tests pass and your code follows the styleguide
+- Run `yarn format` to format your code before committing
+- Run `yarn lint` to ensure there are no linting errors
 - Request review from maintainers
 - Address any feedback and update your PR accordingly
 
@@ -210,10 +214,11 @@ If you want to improve documentation, please:
 
 - **TypeScript**: Follow TypeScript best practices and use strict mode
 - **React/Next.js**: Follow React best practices and Next.js conventions
-- **Formatting**: Use the project's formatter (Prettier, if configured)
+- **Formatting**: Run `yarn format` to automatically format code using Prettier. The formatter handles TypeScript, TSX, and Markdown files
 - **Components**: Use functional components with hooks
 - **File naming**: Use kebab-case for files and PascalCase for components
 - **Imports**: Group imports (external, internal, relative) with blank lines
+- **Linting**: Run `yarn lint` before committing. Generated files (e.g., Prisma generated files in `packages/database/generated/`) are automatically excluded from linting
 
 ### TypeScript Guidelines
 
